@@ -35,3 +35,28 @@ def get_user_input():
 
     # Return list of floats
     return float_list
+
+def calc_average_temperature(temperature_list):
+    average = sum(temperature_list) / len(temperature_list)
+    return average
+def calc_min_max_temperature(temperature_list):
+    min_temp = min(temperature_list)
+    max_temp = max(temperature_list)
+
+    return [min_temp, max_temp]
+def calc_median_temperature(temperature_list):
+    # Sort list in ascending order
+    temperature_list.sort()
+
+    n = len(temperature_list)
+
+    # Odd number of elements
+    if n % 2 == 1:
+        median = temperature_list[n // 2]
+
+    # Even number of elements
+    else:
+        median = (temperature_list[n // 2 - 1] +
+                  temperature_list[n // 2]) / 2
+
+    return median
